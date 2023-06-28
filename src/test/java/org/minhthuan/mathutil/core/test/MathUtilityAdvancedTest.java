@@ -16,26 +16,19 @@ import org.minhthuan.mathutil.core.MathUtility;
  */
 public class MathUtilityAdvancedTest {
 
-    // => Chuẩn bị sẵn riếng data, lát fill vào => DDT
-    // Hàm trả về mang 2 chiều, kiểu wrapper class/object
-    // mảng chứa các cặp n -> expected
     public static Object[][] initTestData() {
-        Object[][] testData = {{0, 1}, 
-                               {1, 1}, 
-                               {2, 2}, 
-                               {5, 120}, 
-                               {6, 7200}
-                              };
+        Object[][] testData = {{0, 1},
+        {1, 1},
+        {2, 2},
+        {5, 120},
+        {6, 720}
+        };
         return testData;
     }
 
     @ParameterizedTest
     @MethodSource(value = "initTestData")
     public void testFactorialGivenRightArgumentReturnsWell(int n, long expected) {
-        // DDT: DATA DRIVEN TESTING
-        // Tham số hóa việc đưa test data vào hàm assertE()
-        // biến đổi dữ liệu thành tham số cho tổng quát
-        // PARAMETERIZED
         assertEquals(expected, MathUtility.getFactorial(n));
     }
 
